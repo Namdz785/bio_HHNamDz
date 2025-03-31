@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 🔥 CONTAINER MỚI - ĐẸP HƠN 🔥 */
+.bio-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Trong suốt nhẹ */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2); /* Bóng mềm mại */
+    width: 450px;
+    backdrop-filter: blur(10px); /* Hiệu ứng mờ kính */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hiệu ứng viền phát sáng khi hover */
+.bio-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 💡 Hiệu ứng ánh sáng phản chiếu */
+.bio-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 10%, transparent 50%);
+    transform: rotate(25deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.bio-container:hover::before {
+    top: -30%;
+    left: -30%;
+}
+
+/* Avatar */
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+/* Hiệu ứng chữ */
+.typing-text {
+    font-size: 22px;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+
+.glowing-text, .typed {
+    display: inline-block;
+    animation: neonGlow 1.5s infinite alternate;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hiệu ứng neon */
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 5px #ff416c, 0 0 10px #ff4b2b;
+    }
+    to {
+        text-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
+    }
+}
+
+/* Mô tả */
+.description {
+    font-size: 16px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Nút bấm */
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 16px;
+    box-shadow: 0px 5px 10px rgba(255, 118, 132, 0.3);
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #ff5252, #ff7eb3);
+    transform: translateY(-3px);
+}
+
+/* Hiệu ứng fade in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing-move {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(2px); }
+    50% { transform: translateX(-2px); }
+    75% { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+}
+
+.typed {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff416c;
+    text-shadow: 0px 3px 10px rgba(255, 65, 108, 0.6);
+    animation: typing-move 1.5s infinite ease-in-out;
+}
+
+/* 🌌 Background Gradient Đen - Trắng */
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff; /* Chữ màu trắng nổi bật */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 💡 Hiệu ứng Glow nhẹ cho chữ */
+.typed, .swing-text {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* ✨ Hiệu ứng ánh sáng nhẹ ở background */
+@keyframes glowing {
+    0% { background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, rgba(0,0,0,1) 100%); }
+    50% { background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,1) 100%); }
+    100% { background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, rgba(0,0,0,1) 100%); }
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,0,0,0) 80%);
+    transform: translate(-50%, -50%);
+    filter: blur(150px);
+    animation: glowing 3s infinite alternate;
+}
+
+
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 📦 Container chứa chữ */
+.container {
+    width: 400px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* 🔥 Chữ trong container */
+.follow-text {
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 20px rgba(255, 255, 255, 0.6);
+    transition: transform 0.1s linear;
+}
+
+
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ✨ Lớp phủ tạo hiệu ứng phát sáng ở 4 góc */
+.glowing-corners::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.6) 10%, transparent 50%),
+                radial-gradient(circle at top right, rgba(255, 255, 255, 0.6) 10%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.6) 10%, transparent 50%),
+                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.6) 10%, transparent 50%);
+    animation: glow 3s infinite alternate ease-in-out;
+}
+
+/* 🔥 Hiệu ứng sáng nhấp nháy */
+@keyframes glow {
+    0% { opacity: 0.7; filter: blur(20px); }
+    50% { opacity: 1; filter: blur(30px); }
+    100% { opacity: 0.7; filter: blur(20px); }
+}
+
+
+body {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 70%),
+                linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ✨ Hiệu ứng viền phát sáng 4 góc */
+.glowing-corners::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7) 10%, transparent 50%),
+                radial-gradient(circle at top right, rgba(255, 255, 255, 0.7) 10%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.7) 10%, transparent 50%),
+                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.7) 10%, transparent 50%);
+    animation: glow 3s infinite alternate ease-in-out;
+}
+
+/* 🔥 Hiệu ứng phát sáng trung tâm */
+.center-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 80%);
+    filter: blur(50px);
+    animation: centerGlow 5s infinite alternate ease-in-out;
+}
+
+/* ✨ Animation cho hiệu ứng sáng */
+@keyframes glow {
+    0% { opacity: 0.6; filter: blur(20px); }
+    50% { opacity: 1; filter: blur(40px); }
+    100% { opacity: 0.6; filter: blur(20px); }
+}
+
+@keyframes centerGlow {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+}
+
+
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🌈 Viền LED RGB chạy quanh mép */
+.led-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ✨ Hiệu ứng LED RGB */
+.led-border::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet, red);
+    animation: moveRGB 5s linear infinite;
+}
+
+.led-border::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(180deg, red, orange, yellow, green, cyan, blue, violet, red);
+    animation: moveRGB 5s linear infinite;
+}
+
+.led-bottom {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+    animation: moveRGB 5s linear infinite;
+}
+
+.led-left {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(360deg, red, orange, yellow, green, cyan, blue, violet, red);
+    animation: moveRGB 5s linear infinite;
+}
+
+/* 🚀 Animation di chuyển LED RGB */
+@keyframes moveRGB {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a, #2e2e2e);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* 🌟 Button 3D Nhỏ Gọn */
+.button-3d {
+    display: inline-block;
+    padding: 1px 25px;  /* 🔹 Giảm kích thước */
+    font-size: 20px;     /* 🔹 Giảm cỡ chữ */
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(145deg, #ff1e56, #ffac41);
+    border: none;
+    border-radius: 8px;  /* 🔹 Bo góc nhẹ */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 0 #c70039, 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 💡 Hiệu ứng bóng 3D */
+.button-3d:active {
+    box-shadow: 0 2px 0 #c70039, 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(2px);
+}
+
+/* 🌈 Tạo Hiệu Ứng Sáng Nhẹ */
+.button-3d::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* 🔥 Hover - Nút sáng lên khi di chuột */
+.button-3d:hover {
+    filter: brightness(1.2);
+}
+
+
+@keyframes textGlow {
+    0% { transform: scale(1); text-shadow: 0 0 10px rgba(255, 100, 100, 0.6); }
+    50% { transform: scale(1.05); text-shadow: 0 0 20px rgba(255, 150, 150, 0.8); }
+    100% { transform: scale(1); text-shadow: 0 0 10px rgba(255, 100, 100, 0.6); }
+}
+
+.text-glow {
+    animation: textGlow 2s infinite ease-in-out;
+}
+
+
+.info-item {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+
+.card {
+    position: relative;
+    width: 400px; /* Điều chỉnh kích thước nếu cần */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 🔥 Viền RGB Chạy Mượt */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+    border-radius: 18px;
+    z-index: -1;
+    filter: blur(8px);
+    animation: rgbBorder 6s linear infinite;
+}
+
+/* 🌈 Tạo hiệu ứng chạy mượt */
+@keyframes rgbBorder {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+
+.card {
+    width: 400px;
+    padding: 20px;
+    background: url('https://i.ibb.co/tPQKcW4b/image.png') center/cover no-repeat;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    animation: avatarBorder 3s infinite linear;
+}
+
+@keyframes avatarBorder {
+    0% { border-color: red; }
+    25% { border-color: yellow; }
+    50% { border-color: cyan; }
+    75% { border-color: blue; }
+    100% { border-color: red; }
+}
+
+
